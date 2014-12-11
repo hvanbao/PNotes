@@ -7,7 +7,7 @@
 - https://www.scalingphpbook.com/
 - http://www.slideshare.net/e.zimuel/how-to-scale-php-applications
 - Zend and Symfony: http://www.quora.com/Why-does-Zend-Framework-is-not-popular (login fb account/ 123456)
-- 
+
 ### Hadoop and PHP
 
 - http://www.slideshare.net/Wombert/largescale-data-processing-with-hadoop-and-php-phpday11-20110514
