@@ -17,3 +17,7 @@
 
 ### Docker
 - docker
+- 
+### Monitor folder:
+- https://github.com/gorakhargosh/watchdog
+- https://github.com/seb-m/pyinotify/wiki/Tutorial
