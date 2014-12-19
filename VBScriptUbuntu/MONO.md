@@ -1,7 +1,7 @@
 # MONO Connect to Postgres
 ## Samples:
 - https://github.com/npgsql/npgsql/wiki/User-Manual
-'''
+```
 using System;
 using System.Data;
 using Npgsql;
@@ -36,4 +36,4 @@ public static class NpgsqlUserManual
     }
   }
 }
-'''
+```
