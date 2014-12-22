@@ -1,4 +1,5 @@
 ## Framework
+======================================
 ### AngularJS MVW (Model View Whatever)
 ### Durandaljs http://durandaljs.com/ MVVM (Model View View Model - composite)
 ### q promise ( $().then - callback)
@@ -6,3 +7,7 @@
 ### Kendo UI
 - UI for PHP 5.3+, ASP, JSP
 - http://www.telerik.com/download/kendo-ui
+## Chart
+========================================
+### JavaScript InfoVis Toolkit
+- http://philogb.github.io/jit/demos.html
