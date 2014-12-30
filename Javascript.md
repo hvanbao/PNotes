@@ -10,7 +10,14 @@
 ### Bootstrap
 ### ReactJS 
 ### q promise ( $().then - callback)
+### NodeJS
 
+## API
+### Facebook 
+### Twitter
+### Google+ 
+### YouTube
+### Instagram
 
 ## Chart
 ========================================
