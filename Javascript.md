@@ -11,7 +11,11 @@
 ### ReactJS 
 ### q promise ( $().then - callback)
 
+
 ## Chart
 ========================================
 ### JavaScript InfoVis Toolkit
 - http://philogb.github.io/jit/demos.html
+- 
+## Tools:
+* Chrome DevTool :http://discover-devtools.codeschool.com/
