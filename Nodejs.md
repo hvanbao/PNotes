@@ -158,4 +158,31 @@ if (!module.parent) {
   console.log('Express started on port 3000');
 ```
 * Route middleware https://github.com/strongloop/express/blob/master/examples/route-middleware/index.js
-* 
+* Namespace Route https://github.com/expressjs/express-namespace?_ga=1.196479916.1248229465.1419587235
+```
+GET /forum/12
+GET /forum/12/view
+GET /forum/12/edit
+GET /forum/12/thread/5
+DELETE /forum/12
+
+app.namespace('/forum/:id', function(){
+  app.get('/(view)?', function(req, res){
+    res.send('GET forum ' + req.params.id);
+  });
+
+  app.get('/edit', function(req, res){
+    res.send('GET forum ' + req.params.id + ' edit page');
+  });
+
+  app.namespace('/thread', function(){
+    app.get('/:tid', function(req, res){
+      res.send('GET forum ' + req.params.id + ' thread ' + req.params.tid);
+    });
+  });
+
+  app.del('/', function(req, res){
+    res.send('DELETE forum ' + req.params.id);
+  });
+});
+```
