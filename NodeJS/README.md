@@ -7,7 +7,7 @@
 1. [Route](Route.md)
 2. Third-party Node modules: 
   * [Connect to Backend] (StrongLoop.md) 
-3. [Template Engine](Consolidate.md): *need more research on each template engine to understand pro and corn*
+3. [Template Engine](Consolidate.md): **need more research on each template engine to understand pro and corn**
   * [Use template engine](http://expressjs.com/guide/using-template-engines.html)
   * [Define new template engine](http://expressjs.com/advanced/developing-template-engines.html)
   * 
@@ -59,7 +59,7 @@
   ```
 8. Render plain HTML
  * If you have a specific file, use res.sendFile(). If you are serving many assets from a directory use the express.static() middleware.
-9. [Moving (migration) Express 3 to Express 4] (http://expressjs.com/guide/migrating-4.html): *need more research how to implement, what changes in Express 4*
+9. [Moving (migration) Express 3 to Express 4] (http://expressjs.com/guide/migrating-4.html): **need more research how to implement, what changes in Express 4**
 10. [Debugging] (http://expressjs.com/guide/debugging.html)
  ```
  npm install debug
@@ -80,12 +80,12 @@
   DEBUG=http,mail,express:* node index.js
  ```
 
-11. [Express behind proxy](http://expressjs.com/guide/behind-proxies.html) *need more research*
+11. [Express behind proxy](http://expressjs.com/guide/behind-proxies.html) **need more research**
 12. Middleware
- * [Using middleware](http://expressjs.com/guide/behind-proxies.html) *need more research*
+ * [Using middleware](http://expressjs.com/guide/behind-proxies.html) **need more research**
  * [Third Party Middleware](http://expressjs.com/resources/middleware.html)
 13. [Express application sample](https://github.com/strongloop/express/tree/master/examples?_ga=1.197094316.1248229465.1419587235)
-14. Security *need more research*
+14. Security **need more research**
  * Injection Vulnerabilities (JavaScript, SQL, Mongo, HTML)
  * Session fixation and hijacking
  * Cross-Site Vulnerabilities (Scripting, Request Forgery)
