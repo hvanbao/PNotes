@@ -8,20 +8,28 @@
 * ejs
 * haml (website)
 * haml-coffee (website)
-* handlebars (website)
+* [handlebars](http://handlebarsjs.com/)
+  * [Express handlebars](https://github.com/ericf/express-handlebars)
+  * [Extend from Mustache but differences](https://github.com/wycats/handlebars.js#differences-between-handlebarsjs-and-mustache) 
+  * Faster than Mustache (about half the time of Mustache templates)
 * hogan (website)
-* jade (website)
+* [jade](http://jade-lang.com/)
+  * Jade is a high performance template engine heavily influenced by Haml and implemented with JavaScript for node and browsers 
 * jazz
 * jqtpl (website)
 * JUST
 * liquor
 * lodash (website)
 * mote (website)
-* mustache
+* [mustache](https://github.com/janl/mustache.js)
+  * Mustache is a logic-less template syntax. It can be used for HTML, config files, source code - anything. It works by expanding tags in a template using values provided in a hash or object. 
 * nunjucks
 * QEJS
 * ractive
-* swig (website)
+* [swig](http://paularmstrong.github.io/swig/docs/tags/)
+  * Swig is an awesome, Django/Jinja-like template engine for node.js.
+  * Swig reads template files and translates them into cached javascript functions. When we later render a template we call the evaluated function, passing a context object as an argument.
+  * Like template in Python Flask
 * templayed
 * toffee
 * underscore (website)
