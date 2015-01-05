@@ -4,3 +4,37 @@
 ```
 slc loopback:model
 ```
+* Connect to database
+  * MySQL : http://docs.strongloop.com/display/public/LB/Connect+your+API+to+a+data+source
+  ```
+  slc loopback:datasource
+  ```
+    * Install MySQL connector 
+    ```
+    npm install loopback-connector-mysql --save
+    ```
+    * Configure data source: Edit /server/datasources.json
+    ```
+    {
+      "db": {
+        "name": "db",
+        "connector": "memory"
+      },
+      "mysqlDs": {
+        "name": "mysqlDs",
+        "connector": "mysql",
+        "host": "demo.strongloop.com",
+        "port": 3306,
+        "database": "demo",
+        "username": "demo",
+        "password": "L00pBack"
+      }
+    }
+    ```
+    * Connect CoffeeShop model to MySQL
+    ```
+    "CoffeeShop": {
+      "dataSource": "db",
+      "public": true
+    }
+    ```
