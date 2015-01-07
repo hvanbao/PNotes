@@ -15,7 +15,14 @@ Docker
    sudo docker login
   ```
   - Dockerize application
+    - Access container CLI
+    
+    ```
+    sudo docker run -i -t ubuntu /bin/bash
+    root@af8bae53bdd3:/#
+    ```
     - An Interactive Container
+    - 
     ```
     sudo docker run ubuntu:14.04 /bin/echo 'Hello world'
     
