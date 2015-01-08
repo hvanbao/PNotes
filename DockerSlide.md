@@ -10,7 +10,47 @@ Docker
 - Docker client
 - Docker repository
 - Demo
-  - Login Repository:  
+  - Install docker image
+  
+  ```
+  sudo apt-get update
+  $ sudo apt-get install docker.io
+  ```
+  - Login Repository: 
+  - Building Docker image
+  - Creating Docker container
+  - List/Stop/Start/Remove container
+  Run Docker from github
+  ```
+  sudo docker run -d -P training/webapp python app.py
+  ```
+  ```
+  #echo "Removing all docker containers" 
+  docker stop $(docker ps -a -q)
+  docker rm $(docker ps -a -q)
+  
+  #echo "Removing all docker images"
+  docker rmi $(docker images -a -q)
+  ```
+  - Expose public port
+  - Manage data in container
+    - Backup : 
+  ```
+   sudo docker run --volumes-from perlserver1 -v $(pwd):/backup perlimage tar cvf /backup/backup.tar /project
+  ```
+    - Restore
+    
+  ```
+  sudo docker run -v /dbdata --name dbdata2 ubuntu /bin/bash
+  sudo docker run -v /project --name perlserver1.1 perlimage /bin/bash
+  ```
+  
+    - Untar backup file
+    
+  ```
+  $ sudo docker run --volumes-from dbdata2 -v $(pwd):/backup busybox tar xvf /backup/backup.tar
+  ```
+  - Pushing a repository to Docker Hub
   ```
    sudo docker login
   ```
