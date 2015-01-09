@@ -21,3 +21,7 @@
 ### Monitor folder:
 - https://github.com/gorakhargosh/watchdog
 - https://github.com/seb-m/pyinotify/wiki/Tutorial
+- 
+ pylint --help
+ 2072  pylint --rcfile=standard.rc --output-format=html --reports=y portal/apis > pylintResult.html
+
