@@ -19,6 +19,10 @@
 ### YouTube
 ### Instagram
 
+## Coding standard
+### JSHint
+- Setup
+- 
 ## Chart
 ========================================
 ### JavaScript InfoVis Toolkit
