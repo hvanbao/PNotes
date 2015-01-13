@@ -22,6 +22,11 @@
 - https://github.com/gorakhargosh/watchdog
 - https://github.com/seb-m/pyinotify/wiki/Tutorial
 - http://aws.amazon.com/blogs/aws/s3-event-notification/
+ - http://boto.readthedocs.org/en/latest/sqs_tut.html
+ 
+ ```python
+ 
+ ```
 
 ### Coding Standard
 - Pylint
