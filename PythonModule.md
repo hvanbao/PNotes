@@ -21,7 +21,13 @@
 ### Monitor folder:
 - https://github.com/gorakhargosh/watchdog
 - https://github.com/seb-m/pyinotify/wiki/Tutorial
-- 
+- http://aws.amazon.com/blogs/aws/s3-event-notification/
+
+### Coding Standard
+- Pylint
+ 
+ ```
  pylint --help
- 2072  pylint --rcfile=standard.rc --output-format=html --reports=y portal/apis > pylintResult.html
+ pylint --rcfile=standard.rc --output-format=html --reports=y portal/apis > pylintResult.html
+ ```
 
