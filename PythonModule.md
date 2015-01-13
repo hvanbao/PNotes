@@ -26,7 +26,7 @@
 ### Coding Standard
 - Pylint
  
- ```
+ ```python
  pylint --help
  pylint --rcfile=standard.rc --output-format=html --reports=y portal/apis > pylintResult.html
  ```
