@@ -21,8 +21,26 @@
 
 ## Coding standard
 ### JSHint
-- Setup
-- 
+- Setup: 
+- jshintrc.txt, 
+
+```
+```
+- package.json,
+
+```
+```
+
+- Gruntfile.js
+
+```
+```
+- Execute: install jshint, grunt package and then run "grunt test"
+```bash
+npm install jshint
+npm install grunt
+grunt test
+```
 ## Chart
 ========================================
 ### JavaScript InfoVis Toolkit
