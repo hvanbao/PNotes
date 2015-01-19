@@ -48,3 +48,6 @@ grunt test
 - 
 ## Tools:
 * Chrome DevTool :http://discover-devtools.codeschool.com/
+* 
+sort array object by key
+http://jsfiddle.net/xsM5s/16/
