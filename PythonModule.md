@@ -36,3 +36,4 @@
  pylint --rcfile=standard.rc --output-format=html --reports=y portal/apis > pylintResult.html
  ```
 
+Python login sample: https://blog.openshift.com/use-flask-login-to-add-user-authentication-to-your-python-application/
