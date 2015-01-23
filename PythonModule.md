@@ -25,6 +25,9 @@
  - Amazon Simple Notification Service Developer Guide http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html 
  - Create ARN Queue : http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/CreatingQueue.html
  - Python SQS Queue http://boto.readthedocs.org/en/latest/sqs_tut.html
+ - Lambda Function http://aws.amazon.com/lambda/faqs/
+ - http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html 
+ 
 - http://boto.readthedocs.org/en/latest/sqs_tut.html
  
 
