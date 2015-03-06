@@ -7,6 +7,18 @@
 ###Date
 - python-dateutil
 
+###Request
+A user requests the following URL:
+
+    http://www.example.com/myapplication/page.html?x=y
+In this case the values of the above mentioned attributes would be the following:
+
+    path             /page.html
+    script_root      /myapplication
+    base_url         http://www.example.com/myapplication/page.html
+    url              http://www.example.com/myapplication/page.html?x=y
+    url_root         http://www.example.com/myapplication/
+
 ###Unit Test
 - Jasmine
 - Mocha
