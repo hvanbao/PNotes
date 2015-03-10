@@ -100,4 +100,26 @@ True
 type(P).__name__ == 'int'
 True
 ```
+2. Between 2 numbers
+
+```
+r=range(1,4)
+
+>>> 2 in r
+True
+>>> 1 in r
+True
+>>> 5 in r
+False
+>>> 0 in r
+False
+```
+3. length of integer
+
+```
+>>> a=12345
+>>> a.__str__().__len__()
+5
+```
+
 
