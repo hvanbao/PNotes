@@ -86,3 +86,18 @@ MA2uw&Iwa3oy
  ```
 
 Python login sample: https://blog.openshift.com/use-flask-login-to-add-user-authentication-to-your-python-application/
+
+## Common function 
+1. Get type of variable : 
+
+```
+N = [2,3,5]
+P = 5
+
+type(N).__name__ == 'list'
+True
+
+type(P).__name__ == 'int'
+True
+```
+
