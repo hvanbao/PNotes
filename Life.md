@@ -9,6 +9,7 @@
 9. Tai sao - Trinh Lam
 10. Nhung dom mat hoa chau
 11. Chi con lai tinh yeu - Bang Kieu
+12. Tinh yeu danh roi - Luu Bich
 
 # xxx
 - Oi tinh yeu dep nhat phut giay minh chia tay
