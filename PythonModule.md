@@ -23,7 +23,9 @@ In this case the values of the above mentioned attributes would be the following
 - Jasmine
 - Mocha
 - Nose
-
+```
+ nosetests --with-coverage --cover-html test/scheduler/test_create_job.py
+ ```
 ### Scheduler (Cron jobs)
 - APScheduler
 
