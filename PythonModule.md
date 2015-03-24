@@ -25,6 +25,7 @@ In this case the values of the above mentioned attributes would be the following
 - Nose
 ```
  nosetests --with-coverage --cover-html test/scheduler/test_create_job.py
+ python -m unittest discover
  ```
 ### Scheduler (Cron jobs)
 - APScheduler
