@@ -25,6 +25,10 @@
 - jshintrc.txt, 
 
 ```
+ignore
+/*ignore jslint start*/
+...
+/*ignore jslint end*/
 ```
 - package.json,
 
