@@ -29,6 +29,11 @@ ignore
 /*ignore jslint start*/
 ...
 /*ignore jslint end*/
+
+/* jshint ignore:start */
+...
+/* jshint ignore:end */
+
 ```
 - package.json,
 
