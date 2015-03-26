@@ -10,3 +10,7 @@ Music
 =================
 1. [Tuyển Chọn 25 Tuyệt Phẩm Nhạc Lính Trường Vũ Hay Nhất](https://www.youtube.com/watch?v=Btg8ViN99-U)
 2. https://www.youtube.com/watch?v=ao6m06LODg0
+
+a.Thong
+=================
+1.[Yêu Người Ngoài Công Giáo!](https://www.youtube.com/watch?v=3cXiBPZwdr0)
