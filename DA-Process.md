@@ -10,11 +10,11 @@ Bug tickets
 ==============================
 1. All steps are resemble feature tickets
 2. Adding more: when ticket is ready for review these information must be added into Jira:
-    Root cause
-    Solution
-    Scenario tests
-    Impact: Y/N
-      If yes: point out where is the place so QC will test this impact.
+    * Root cause
+    * Solution
+    * Scenario tests
+    * Impact: Y/N
+      *If yes: point out where is the place so QC will test this impact.
     
 Comments
 ============================
