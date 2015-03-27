@@ -1,22 +1,21 @@
 Feature or enhancement tickets
 =================================
-  Investigate and provide solution or list out what need to be done on that ticket 
-  Get confirm on solution (from component lead or team lead or technical architect)
-  Provide estimate: should provide both story point and hour story point just shows the complicated of ticket, if story point > 5 should be considered to break into smaller ones
-  Component team will discuss and provide estimate together
-  Component lead should track deadline for each members/tickets of that sprint to see if we have enough time to complete all assigned tickets of that sprint and raise comment if need
-start working  this is to avoid wasting effort on the wrong way
+1. Investigate and provide solution or list out what need to be done on that ticket 
+2. Get confirm on solution (from component lead or team lead or technical architect)
+3. Provide estimate: should provide both story point and hour story point just shows the complicated of ticket, if story point > 5 should be considered to break into smaller ones
+4. Component team will discuss and provide estimate together
+5. Component lead should track deadline for each members/tickets of that sprint to see if we have enough time to complete all assigned tickets of that sprint and raise comment if need start working  this is to avoid wasting effort on the wrong way
 
 Bug tickets
 ==============================
-  All steps are resemble feature tickets
-  Adding more: when ticket is ready for review these information must be added into Jira:
+1. All steps are resemble feature tickets
+2. Adding more: when ticket is ready for review these information must be added into Jira:
     Root cause
     Solution
     Scenario tests
     Impact: Y/N
       If yes: point out where is the place so QC will test this impact.
-      
+    
 Comments
 ============================
 1. The first comment of ticket must be : list out what need to be done for that ticket, team lead, component lead or architect will confirm then developer start to develop
