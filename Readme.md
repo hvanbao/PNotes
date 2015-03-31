@@ -12,3 +12,11 @@ Git
 ```
 https://github.com/DynAgilityLLC/aol-reporting/compare/AOLPORTAL-82?expand=1
 ```
+
+Temperature
+===========
+- (Celsius per minute to wattage) http://www.conversion-website.com/power/Celsius-heat-unit-IT-per-minute-to-watt.html
+- 
+- F to C
+- 
+
