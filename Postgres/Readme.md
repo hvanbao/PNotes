@@ -4,6 +4,6 @@
 ```
 sync; /etc/init.d/postgresql-9.0 stop; echo 1 > /proc/sys/vm/drop_caches; /etc/init.d/postgresql-9.0 start
 ```
-4. [5-Minute Introduction to PostgreSQL Performance] (Postgres/5-Minute-Introduction-to-PostgreSQL-Performance.txt) - http://www.westnet.com/~gsmith/content/postgresql/pg-5minute.htm
+4. [5-Minute Introduction to PostgreSQL Performance] (5-Minute-Introduction-to-PostgreSQL-Performance.txt) - http://www.westnet.com/~gsmith/content/postgresql/pg-5minute.htm
 
 
