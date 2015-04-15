@@ -87,6 +87,19 @@ MA2uw&Iwa3oy
  pylint --help
  pylint --rcfile=standard.rc --output-format=html --reports=y portal/apis > pylintResult.html
  ```
+### Python debug
+https://pythonconquerstheuniverse.wordpress.com/2009/09/10/debugging-in-python/
+```
+import pdb
+pdb.set_trace()
+```
+1. Execute the next statement… with “n” (next)
+2. Repeating the last debugging command… with ENTER
+3. Quitting it all… with “q” (quit)
+4. Printing the value of variables… with “p” (print)
+5. Turning off the (Pdb) prompt… with “c” (continue)
+6. Seeing where you are… with “l” (list)
+
 
 Python login sample: https://blog.openshift.com/use-flask-login-to-add-user-authentication-to-your-python-application/
 
