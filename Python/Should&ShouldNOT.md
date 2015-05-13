@@ -141,7 +141,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  print(result) # [60, 45, 33]
 
 ```
-8. 
+9. 
 ------
 * **Don't Write This:**
 ```python
@@ -163,7 +163,7 @@ if name != '' and len(pets) > 0 and owners != {}:
             'Safe': 'Hammad',
             'Thomas': 'Engine'}
 ```
-9. 
+10. 
 ------
 * **Don't Write This:**
 ```python
@@ -177,7 +177,7 @@ if name == 'Tom' or name == 'Dick' or name == 'Harry':
 name = 'Tom'
 is_generic_name = name in ('Tom', 'Dick', 'Harry')
 ```
-10. 
+11. 
 ------
 * **Don't Write This:**
 ```python
@@ -204,7 +204,8 @@ for user in get_all_users():
     else:
         print ('All email addresses are valid!')
     ```
-10. 
+
+12. 
 ------
 * **Write This:**
 ```python
@@ -220,10 +221,6 @@ for k, _ in [('a', 1), ('b', 2), ('c', 3)]
 ● Sort lists using l.sort(key=key_func)
 ● Avoid comparing directly to True, False, or None
 ```
-
-
-</tbody>
-</table>
 
 
 
