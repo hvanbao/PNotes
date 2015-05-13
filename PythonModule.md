@@ -138,4 +138,5 @@ False
 5
 ```
 
+4. [yield](http://www.jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/)
 
