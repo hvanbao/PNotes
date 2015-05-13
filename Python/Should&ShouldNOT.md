@@ -204,23 +204,24 @@ for user in get_all_users():
     else:
         print ('All email addresses are valid!')
     ```
-
 12. 
------
+------
 * **Write This:**
 ```python
  while True:
- break # This will spark discussion!!!
-● Generators and generator expressions.
-● Avoid from module import *
-Prefer: import numpy as np; import pandas as pd
-● Use _ for “throwaway” variables e.g.:
+  break # This will spark discussion!!!
+```  
+* Generators and generator expressions.
+* Avoid from module import *
+ Prefer: import numpy as np; import pandas as pd
+* Use _ for “throwaway” variables e.g.:
 for k, _ in [('a', 1), ('b', 2), ('c', 3)]
-● dict.get() and dict.setdefault()
-● collections.defaultdict
-● Sort lists using l.sort(key=key_func)
-● Avoid comparing directly to True, False, or None
-```
+* dict.get() and dict.setdefault()
+* collections.defaultdict
+* Sort lists using l.sort(key=key_func)
+* Avoid comparing directly to True, False, or None
+
+
 
 
 
