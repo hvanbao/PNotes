@@ -9,7 +9,7 @@ http://images.immobilien.de/expose/00/04/04/36/0004043615/etc248188603/writing_i
 <tbody>
 <tr>
 <td>
-```python
+```
 my_container = ['Larry', 'Moe', 'Curly']
 index = 0
 for element in my_container:
@@ -18,7 +18,7 @@ for element in my_container:
 ```
 </td>
 <td>
-```python
+```
 my_container = ['Larry', 'Moe', 'Curly']
 for index, element in enumerate(my_container):
     print ('{} {}'.format(index, element))
