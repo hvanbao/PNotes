@@ -31,7 +31,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  if name and pets and owners:
     print('We have pets!')
 ```
-<table>
+
 <tr> 
 <td>
 ```python
@@ -48,8 +48,6 @@ if name != '' and len(pets) > 0 and owners != {}:
 ```
 </td>
 </tr>
-
-</table>
 
 
 
