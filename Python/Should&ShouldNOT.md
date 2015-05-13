@@ -20,7 +20,6 @@ for index, element in enumerate(my_container):
 ```
 2. 
 ------
-
 * **Don't Write This:**
 ```python
 if name != '' and len(pets) > 0 and owners != {}:
@@ -35,6 +34,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  if name and pets and owners:
     print('We have pets!')
 ```
+3. 
 ------
 * **Don't Write This:**
 ```python
@@ -48,6 +48,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  if 'H' in name:
     print('This name has an H in it!')
 ```
+4. 
 ------
 * **Don't Write This:**
 ```python
@@ -63,10 +64,9 @@ if name != '' and len(pets) > 0 and owners != {}:
  for pet in pets:
     print('A', pet, 'can be very cute!')
 ```
-</td>
-</tr>
-<tr>
-<td>
+5. 
+------
+* **Don't Write This:**
 ```python
  a, b = 5, 6
  print(a, b) # 5, 6
@@ -77,8 +77,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  print(a, b) # 6, 5
 
 ```
-</td>
-<td>
+* **Write This:**
 ```python
  a, b = 5, 6
  print(a, b) # 5, 6
@@ -86,10 +85,9 @@ if name != '' and len(pets) > 0 and owners != {}:
  print(a, b) # 6, 5
 
 ```
-</td>
-</tr>
-<tr>
-<td>
+6. 
+------
+* **Don't Write This:**
 ```python
  chars = ['S', 'a', 'f', 'e']
  name = ''
@@ -98,18 +96,16 @@ if name != '' and len(pets) > 0 and owners != {}:
     print(name) # Safe
 
 ```
-</td>
-<td>
+* **Write This:**
 ```python
  chars = ['S', 'a', 'f', 'e']
  name = ''.join(chars)
  print(name) # Safe
 
 ```
-</td>
-</tr>
-<tr>
-<td>
+7. 
+------
+* **Don't Write This:**
 ```python
  d = {'x': '5'}
  if 'x' in d and isinstance(d['x'], str) and \
@@ -118,8 +114,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  else:
     value = None
 ```
-</td>
-<td>
+* **Write This:**
 ```python
  d = {'x': '5'}
  try:
@@ -127,10 +122,9 @@ if name != '' and len(pets) > 0 and owners != {}:
  except (KeyError, TypeError, ValueError):
     value = None
 ```
-</td>
-</tr>
-<tr>
-<td>
+8. 
+------
+* **Don't Write This:**
 ```python
  data = [7, 20, 3, 15, 11]
  result = []
@@ -140,18 +134,16 @@ if name != '' and len(pets) > 0 and owners != {}:
  print(result) # [60, 45, 33]
 
 ```
-</td>
-<td>
+* **Write This:**
 ```python
  data = [7, 20, 3, 15, 11]
  result = [i * 3 for i in data if i > 10]
  print(result) # [60, 45, 33]
 
 ```
-</td>
-</tr>
-<tr>
-<td>
+8. 
+------
+* **Don't Write This:**
 ```python
  keys = ['Safe', 'Bob', 'Thomas']
  values = ['Hammad', 'Builder', 'Engine']
@@ -162,8 +154,7 @@ if name != '' and len(pets) > 0 and owners != {}:
             'Safe': 'Hammad',
             'Thomas': 'Engine'}
 ```
-</td>
-<td>
+* **Write This:**
 ```python
  keys = ['Safe', 'Bob', 'Thomas']
  values = ['Hammad', 'Builder', 'Engine']
@@ -172,46 +163,23 @@ if name != '' and len(pets) > 0 and owners != {}:
             'Safe': 'Hammad',
             'Thomas': 'Engine'}
 ```
-</td>
-</tr>
-<tr>
-<td>
-
-</td>
-<td>
-```python
- while True:
- break # This will spark discussion!!!
-● Generators and generator expressions.
-● Avoid from module import *
-Prefer: import numpy as np; import pandas as pd
-● Use _ for “throwaway” variables e.g.:
-for k, _ in [('a', 1), ('b', 2), ('c', 3)]
-● dict.get() and dict.setdefault()
-● collections.defaultdict
-● Sort lists using l.sort(key=key_func)
-● Avoid comparing directly to True, False, or None
-```
-</td>
-</tr>
-<tr>
-<td>
+9. 
+------
+* **Don't Write This:**
 ```python
 is_generic_name = False
 name = 'Tom'
 if name == 'Tom' or name == 'Dick' or name == 'Harry':
     is_generic_name = True
 ```
-</td>
-<td>
+* **Write This:**
 ```python
 name = 'Tom'
 is_generic_name = name in ('Tom', 'Dick', 'Harry')
 ```
-</td>
-</tr>
-<tr>
-<td>
+10. 
+------
+* **Don't Write This:**
 ```python
 for user in get_all_users():
     has_malformed_email_address = False
@@ -225,9 +193,7 @@ for user in get_all_users():
         print ('All email addresses are valid!')
 
 ```
-</td>
-<td>
-
+* **Write This:**
 ```python
 for user in get_all_users():
     print ('Checking {}'.format(user))
@@ -238,8 +204,23 @@ for user in get_all_users():
     else:
         print ('All email addresses are valid!')
     ```
-</td>
-</tr>
+10. 
+------
+* **Write This:**
+```python
+ while True:
+ break # This will spark discussion!!!
+● Generators and generator expressions.
+● Avoid from module import *
+Prefer: import numpy as np; import pandas as pd
+● Use _ for “throwaway” variables e.g.:
+for k, _ in [('a', 1), ('b', 2), ('c', 3)]
+● dict.get() and dict.setdefault()
+● collections.defaultdict
+● Sort lists using l.sort(key=key_func)
+● Avoid comparing directly to True, False, or None
+```
+
 
 </tbody>
 </table>
