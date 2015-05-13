@@ -1,14 +1,9 @@
 Source: http://safehammad.com/downloads/python-idioms-2014-01-16.pdf
 http://images.immobilien.de/expose/00/04/04/36/0004043615/etc248188603/writing_idiomatic_python_3.pdf
 
-<table>
-<tr>
-<th>Don't Write This:</th>
-<th>Write This:</th>
-</tr>
-<tbody>
-<tr>
-<td>
+1. # 
+* Don't Write This:
+
 ```
 my_container = ['Larry', 'Moe', 'Curly']
 index = 0
@@ -16,24 +11,21 @@ for element in my_container:
     print ('{} {}'.format(index, element))
     index += 1
 ```
-</td>
-<td>
+* Write This:
 ```
 my_container = ['Larry', 'Moe', 'Curly']
 for index, element in enumerate(my_container):
     print ('{} {}'.format(index, element))
 ```
-</td>
-</tr>
-<tr>
-<td>
+
+2.  
+* Don't Write This:
 ```python
 if name != '' and len(pets) > 0 and owners != {}:
     print('We have pets!')
 
 ```
-</td>
-<td>
+* Write This:
 ```python
  name = 'Safe'
  pets = ['Dog', 'Cat', 'Hamster']
@@ -41,8 +33,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  if name and pets and owners:
     print('We have pets!')
 ```
-</td>
-</tr>
+<table>
 <tr> 
 <td>
 ```python
