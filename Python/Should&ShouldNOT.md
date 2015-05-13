@@ -1,4 +1,5 @@
 Source: http://safehammad.com/downloads/python-idioms-2014-01-16.pdf
+http://images.immobilien.de/expose/00/04/04/36/0004043615/etc248188603/writing_idiomatic_python_3.pdf
 
 <table>
 <tr>
@@ -223,10 +224,31 @@ is_generic_name = name in ('Tom', 'Dick', 'Harry')
 </tr>
 <tr>
 <td>
+```python
+for user in get_all_users():
+    has_malformed_email_address = False
+    print ('Checking {}'.format(user))
+    for email_address in user.get_all_email_addresses():
+        if email_is_malformed(email_address):
+            has_malformed_email_address = True
+            print ('Has a malformed email address!')
+            break
+    if not has_malformed_email_address:
+        print ('All email addresses are valid!')
 
+```
 </td>
 <td>
-
+```python
+for user in get_all_users():
+    print ('Checking {}'.format(user))
+    for email_address in user.get_all_email_addresses():
+        if email_is_malformed(email_address):
+            print ('Has a malformed email address!')
+            break
+    else:
+        print ('All email addresses are valid!')
+```
 </td>
 </tr>
 <tr>
@@ -270,6 +292,7 @@ is_generic_name = name in ('Tom', 'Dick', 'Harry')
 </td>
 </tr>
 </tbody>
+</table>
 
 
 
