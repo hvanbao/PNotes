@@ -206,7 +206,7 @@ for user in get_all_users():
     ```
 
 12. 
-------
+-----
 * **Write This:**
 ```python
  while True:
