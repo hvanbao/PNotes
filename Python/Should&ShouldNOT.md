@@ -376,10 +376,407 @@ p = Point(1, 2)
 print (p)
 # Prints '1, 2'
 ```
+20. Use `sets` to eliminate duplicate entries from `Iterable` containers
+--------------------
+* **Don't Write This:**
+```python
+unique_surnames = []
+for surname in employee_surnames:
+	if surname not in unique_surnames:
+		unique_surnames.append(surname)
+def display(elements, output_format='html'):
+	if output_format == 'std_out':
+		for element in elements:
+			print(element)
+	elif output_format == 'html':
+		as_html = '<ul>'
+		for element in elements:
+			as_html += '<li>{}</li>'.format(element)
+		return as_html + '</ul>'
+	else:
+		raise RuntimeError('Unknown format {}'.format(output_format))
+```
+* **Write This:**
+```python
+unique_surnames = set(employee_surnames)
+def display(elements, output_format='html'):
+	if output_format == 'std_out':
+		for element in elements:
+			print(element)
+	elif output_format == 'html':
+		as_html = '<ul>'
+		for element in elements:
+			as_html += '<li>{}</li>'.format(element)
+		return as_html + '</ul>'
+	else:
+		raise RuntimeError('Unknown format {}'.format(output_format))
+```
+21. Use a `set comprehension` to generate sets concisely
+--------------------
+* **Don't Write This:**
+```python
+users_first_names = set()
+for user in users:
+	users_first_names.add(user.first_name)
 
+```
+* **Write This:**
+```python
+users_first_names = {user.first_name for user in users}
+```
+22. Understand and use the mathematical `set` operations
+--------------------
+* **Union** The set of elements in A, B, or both A and B (written A | B in Python).
+* **Intersection** The set of elements in both A and B (written A & B in Python).
+* **Difference* The set of elements in A but not B (written A - B in Python).
+	* Note: order matters here. A - B is not necessarily the same as B - A.
+* **Symmetric Difference** The set of elements in either A or B, but not both A and B (written A ˆ B in Python).
 
+* **Don't Write This:**
+```python
+def get_both_popular_and_active_users():
+	# Assume the following two functions each return a
+	# list of user names
+	most_popular_users = get_list_of_most_popular_users()
+	most_active_users = get_list_of_most_active_users()
+	popular_and_active_users = []
+	for user in most_active_users:
+		if user in most_popular_users:
+			popular_and_active_users.append(user)
+	return popular_and_active_users
+```
+* **Write This:**
+```python
+def get_both_popular_and_active_users():
+	# Assume the following two functions each return a
+	# list of user names
+	return(set(get_list_of_most_active_users()) & set(get_list_of_most_popular_users()))
+```
+23. Use a `generator` to lazily load infinite sequences
+--------------------
+* **Don't Write This:**
+```python
+def get_twitter_stream_for_keyword(keyword):
+	"""Get's the 'live stream', but only at the moment the function is initially called. To get more entries,
+	the client code needs to keep calling 'get_twitter_livestream_for_user'. Not ideal.
+	"""
+	imaginary_twitter_api = ImaginaryTwitterAPI()
+	if imaginary_twitter_api.can_get_stream_data(keyword):
+		return imaginary_twitter_api.get_stream(keyword)
+	current_stream = get_twitter_stream_for_keyword('#jeffknupp')
+	for tweet in current_stream:
+		process_tweet(tweet)
+# Uh, I want to keep showing tweets until the program is quit.
+# What do I do now? Just keep calling
+# get_twitter_stream_for_keyword? That seems stupid.
+def get_list_of_incredibly_complex_calculation_results(data):
+	return [first_incredibly_long_calculation(data),
+	second_incredibly_long_calculation(data),
+	third_incredibly_long_calculation(data),
+	]
 
-12. 
+```
+* **Write This:**
+```python
+def get_twitter_stream_for_keyword(keyword):
+	"""Now, 'get_twitter_stream_for_keyword' is a generator and will continue to generate Iterable pieces of data
+	one at a time until 'can_get_stream_data(user)' is False (which may be never).
+	"""
+	imaginary_twitter_api = ImaginaryTwitterAPI()
+	while imaginary_twitter_api.can_get_stream_data(keyword):
+		yield imaginary_twitter_api.get_stream(keyword)
+# Because it's a generator, I can sit in this loop until
+# the client wants to break out
+for tweet in get_twitter_stream_for_keyword('#jeffknupp'):
+	if got_stop_signal:
+		break
+	process_tweet(tweet)
+def get_list_of_incredibly_complex_calculation_results(data):
+	"""A simple example to be sure, but now when the client code iterates over the call to 'get_list_of_incredibly_complex_calculation_results', we only do as much work as necessary to generate the
+	current item.
+	"""
+	yield first_incredibly_long_calculation(data)
+	yield second_incredibly_long_calculation(data)
+	yield third_incredibly_long_calculation(data)
+```
+24. Prefer a `generator` expression to a `list comprehension` for simple `iteration`
+--------------------
+* **Don't Write This:**
+```python
+for uppercase_name in [name.upper() for name in get_all_usernames()]:
+	process_normalized_username(uppercase_name)
+```
+* **Write This:**
+```python
+for uppercase_name in (name.upper() for name in get_all_usernames()):
+	process_normalized_username(uppercase_name)
+```
+25. Use a `context manager` to ensure resources are properly managed
+--------------------
+* **Don't Write This:**
+```python
+file_handle = open(path_to_file, 'r')
+for line in file_handle.readlines():
+	if raise_exception(line):
+		print('No! An Exception!')
+
+```
+* **Write This:**
+```python
+with open(path_to_file, 'r') as file_handle:
+	for line in file_handle:
+		if raise_exception(line):
+			print('No! An Exception!')
+```
+
+26. Use `tuples` to unpack data
+--------------------
+* **Don't Write This:**
+```python
+list_from_comma_separated_value_file = ['dog', 'Fido', 10]
+animal = list_from_comma_separated_value_file[0]
+name = list_from_comma_separated_value_file[1]
+age = list_from_comma_separated_value_file[2]
+output = ('{name} the {animal} is {age} years old'.format(
+animal=animal, name=name, age=age))
+```
+* **Write This:**
+```python
+list_from_comma_separated_value_file = ['dog', 'Fido', 10]
+(animal, name, age) = list_from_comma_separated_value_file
+output = ('{name} the {animal} is {age} years old'.format(
+animal=animal, name=name, age=age))
+```
+27. Use `_` as a placeholder for data in a tuple that should be ignored
+--------------------
+* **Don't Write This:**
+```python
+(name, age, temp, temp2) = get_user_info(user)
+if age > 21:
+	output = '{name} can drink!'.format(name=name)
+# "Wait, where are temp and temp2 being used?"
+
+```
+* **Write This:**
+```python
+(name, age, _, _) = get_user_info(user)
+if age > 21:
+	output = '{name} can drink!'.format(name=name)
+# "Clearly, only name and age are interesting"
+```
+
+28. Use all `capital letters` when declaring `global constant` values
+--------------------
+* **Don't Write This:**
+```python
+seconds_in_a_day = 60 * 60 * 24
+# ...
+def display_uptime(uptime_in_seconds):
+	percentage_run_time = (uptime_in_seconds/seconds_in_a_day) * 100
+	# "Huh!? Where did seconds_in_a_day come from?"
+	return 'The process was up {percent} percent of the day'.format(percent=int(percentage_run_time))
+# ...
+uptime_in_seconds = 60 * 60 * 24
+display_uptime(uptime_in_seconds)
+
+```
+* **Write This:**
+```python
+SECONDS_IN_A_DAY = 60 * 60 * 24
+# ...
+def display_uptime(uptime_in_seconds):
+	percentage_run_time = (uptime_in_seconds/SECONDS_IN_A_DAY) * 100
+	# "Clearly SECONDS_IN_A_DAY is a constant defined
+	# elsewhere in this module."
+	return 'The process was up {percent} percent of the day'.format(percent=int(percentage_run_time))
+# ...
+uptime_in_seconds = 60 * 60 * 24
+display_uptime(uptime_in_seconds)
+```
+29. Avoid placing multiple statements on a single line
+--------------------
+* **Don't Write This:**
+```python
+if this_is_bad_code: rewrite_code(); make_it_more_readable();
+```
+* **Write This:**
+```python
+if this_is_bad_code:
+	rewrite_code()
+	make_it_more_readable()
+```
+30. Use `sys.exit` in your script to return proper error codes
+--------------------
+* **Don't Write This:**
+```python
+do_stuff_with_result(result)
+	# Optional, since the return value without this return
+	# statment would default to None, which sys.exit treats
+	# as 'exit with 0'
+	return 0
+if __name__ == '__main__':
+	import sys
+	# What happens if no argument is passed on the
+	# command line?
+	if len(sys.argv) > 1:
+		argument = sys.argv[1]
+		result = do_stuff(argument)
+	# Again, what if this is False? How would other programs know?
+	if result:
+		do_stuff_with_result(result)
+
+```
+* **Write This:**
+```python
+def main():
+	import sys
+	if len(sys.argv) < 2:
+		# Calling sys.exit with a string automatically
+		# prints the string to stderr and exits with
+		# a value of '1' (error)
+		sys.exit('You forgot to pass an argument')
+		argument = sys.argv[1]
+		result = do_stuff(argument)
+	if not result:
+		sys.exit(1)
+	# We can also exit with just the return code
+
+# The three lines below are the canonical script entry
+# point lines. You'll see them often in other Python scripts
+if __name__ == '__main__':
+	sys.exit(main())
+```
+31. Use the `if __name__ == '__main__'` pattern to allow a file to be both imported and run directly
+--------------------
+* **Don't Write This:**
+```python
+import sys
+import os
+FIRST_NUMBER = float(sys.argv[1])
+SECOND_NUMBER = float(sys.argv[2])
+def divide(a, b):
+	return a/b
+# I can't import this file (for the super
+# useful 'divide' function) without the following
+# code being executed.
+if SECOND_NUMBER != 0:
+	print(divide(FIRST_NUMBER, SECOND_NUMBER))
+
+```
+* **Write This:**
+```python
+import sys
+import os
+def divide(a, b):
+	return a/b
+# Will only run if script is executed directly,
+# not when the file is imported as a module
+if __name__ == '__main__':
+	first_number = float(sys.argv[1])
+	second_number = float(sys.argv[2])
+	if second_number != 0:
+		print(divide(first_number, second_number))
+```
+32. Prefer `absolute imports` to `relative imports`
+--------------------
+* **Don't Write This:**
+```python
+# My location is package.sub_package.module
+# and I want to import package.other_module.
+# The following should be avoided:
+from ...package import other_module
+
+```
+* **Write This:**
+```python
+# My location is package.sub_package.another_sub_package.module
+# and I want to import package.other_module.
+# Either of the following are acceptable:
+import package.other_module
+import package.other_module as other
+```
+33. Do not use `from foo import *` to import the contents of a module.
+--------------------
+* **Don't Write This:**
+```python
+from foo import *
+
+```
+* **Write This:**
+```python
+from foo import (bar, baz, qux, quux, quuux)
+# or even better...
+import foo
+```
+34. Arrange your `import` statements in a standard order
+--------------------
+* **Don't Write This:**
+```python
+import os.path
+# Some function and class definitions,
+# one of which uses os.path
+# ....
+import concurrent.futures
+from flask import render_template
+# Stuff using futures and Flask's render_template
+# ....
+from flask import (Flask, request, session, g,
+redirect, url_for, abort,
+render_template, flash, _app_ctx_stack)
+import requests
+# Code using flask and requests
+# ....
+if __name__ == '__main__':
+	# Imports when imported as a module are not so
+	# costly that they need to be relegated to inside
+	# an 'if __name__ == '__main__'' block...
+	import this_project.utilities.sentient_network as skynet
+	import this_project.widgets
+	import sys
+```
+* **Write This:**
+```python
+import concurrent.futures
+import os.path
+import sys
+from flask import (Flask, request, session, g,
+redirect, url_for, abort,
+render_template, flash, _app_ctx_stack)
+import requests
+import this_project.utilities.sentient_network as skynet
+import this_project.widgets
+```
+35. Use functions in the os.path module when working with directory paths
+--------------------
+* **Don't Write This:**
+```python
+from datetime import date
+import os
+filename_to_archive = 'test.txt'
+new_filename = 'test.bak'
+target_directory = './archives'
+today = date.today()
+os.mkdir('./archives/' + str(today))
+os.rename(filename_to_archive, target_directory + '/' + str(today) + '/' + new_filename, today + '/' + new_filename)
+
+```
+* **Write This:**
+```python
+from datetime import date
+import os
+current_directory = os.getcwd()
+filename_to_archive = 'test.txt'
+new_filename = os.path.splitext(filename_to_archive)[0] + '.bak'
+target_directory = os.path.join(current_directory, 'archives')
+today = date.today()
+new_path = os.path.join(target_directory, str(today))
+if (os.path.isdir(target_directory)):
+	if not os.path.exists(new_path):
+		os.mkdir(new_path)
+		os.rename(os.path.join(current_directory, filename_to_archive), os.path.join(new_path, new_filename))
+```
+
+36. 
 ------
 * **Write This:**
 ```python
@@ -394,7 +791,15 @@ for k, _ in [('a', 1), ('b', 2), ('c', 3)]
 * dict.get() and dict.setdefault()
 * collections.defaultdict
 * Sort lists using l.sort(key=key_func)
-* Avoid comparing directly to True, False, or None
+* Avoid comparing directly to True, False, or None 
+
+Identifier| Type | Format Example
+---------- | ----- | ---------------
+Class | Camel case | class StringManipulator():
+Variable | Words joined by _ | joined_by_underscore = True
+Function | Words joined by _ | def multi_word_name(words):
+Constant | All uppercase | SECRET_KEY = 42
+
 
 
 
