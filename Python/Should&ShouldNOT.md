@@ -18,7 +18,7 @@ my_container = ['Larry', 'Moe', 'Curly']
 for index, element in enumerate(my_container):
     print ('{} {}'.format(index, element))
 ```
-2. Test for *“truthy”* and *“falsy”* values
+2. Test for *`True`* and *`False`* values
 ------
 * **Don't Write This:**
 ```python
