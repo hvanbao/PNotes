@@ -1,7 +1,7 @@
 Source: http://safehammad.com/downloads/python-idioms-2014-01-16.pdf
 http://images.immobilien.de/expose/00/04/04/36/0004043615/etc248188603/writing_idiomatic_python_3.pdf
 
-1. 
+1. Enumerate
 ------
  
 * **Don't Write This:**
@@ -18,7 +18,7 @@ my_container = ['Larry', 'Moe', 'Curly']
 for index, element in enumerate(my_container):
     print ('{} {}'.format(index, element))
 ```
-2. 
+2. Test for *“truthy”* and *“falsy”* values
 ------
 * **Don't Write This:**
 ```python
@@ -34,7 +34,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  if name and pets and owners:
     print('We have pets!')
 ```
-3. 
+3. Use `in` where possible
 ------
 * **Don't Write This:**
 ```python
@@ -48,7 +48,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  if 'H' in name:
     print('This name has an H in it!')
 ```
-4. 
+4. Use `in` where possible
 ------
 * **Don't Write This:**
 ```python
@@ -64,7 +64,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  for pet in pets:
     print('A', pet, 'can be very cute!')
 ```
-5. 
+5. Swap values without `temp` variable
 ------
 * **Don't Write This:**
 ```python
@@ -85,7 +85,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  print(a, b) # 6, 5
 
 ```
-6. 
+6. Build strings using sequence
 ------
 * **Don't Write This:**
 ```python
@@ -103,7 +103,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  print(name) # Safe
 
 ```
-7. 
+7. `Try...exception` is better than check for specific type
 ------
 * **Don't Write This:**
 ```python
@@ -122,7 +122,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  except (KeyError, TypeError, ValueError):
     value = None
 ```
-8. 
+8. Build lists using list comprehensions (except the second form can be clearer)
 ------
 * **Don't Write This:**
 ```python
@@ -141,7 +141,7 @@ if name != '' and len(pets) > 0 and owners != {}:
  print(result) # [60, 45, 33]
 
 ```
-9. 
+9. Create dict from keys and values using `zip`
 ------
 * **Don't Write This:**
 ```python
@@ -163,7 +163,7 @@ if name != '' and len(pets) > 0 and owners != {}:
             'Safe': 'Hammad',
             'Thomas': 'Engine'}
 ```
-10. 
+10. Avoid repeating variable `name` in compound `if` statement
 ------
 * **Don't Write This:**
 ```python
@@ -177,7 +177,7 @@ if name == 'Tom' or name == 'Dick' or name == 'Harry':
 name = 'Tom'
 is_generic_name = name in ('Tom', 'Dick', 'Harry')
 ```
-11. 
+11. Use `else` to execute code after a `for` loop concludes
 ------
 * **Don't Write This:**
 ```python
