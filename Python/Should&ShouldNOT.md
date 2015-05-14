@@ -204,6 +204,181 @@ for user in get_all_users():
     else:
         print ('All email addresses are valid!')
 ```
+
+13. Use `*args` and `**kwargs` to accept arbitrary arguments
+--------------------
+* **Don't Write This:**
+```python
+def make_api_call(foo, bar, baz):
+	if baz in ('Unicorn', 'Oven', 'New York'):
+		return foo(bar)
+	else:
+		return bar(foo)
+# I need to add another parameter to `make_api_call`
+# without breaking everyone's existing code.
+# I have two options...
+def so_many_options():
+ # I can tack on new parameters, but only if I make
+ # all of them optional...
+def make_api_call(foo, bar, baz, qux=None, foo_polarity=None,
+                 baz_coefficient=None, quux_capacitor=None,
+                 bar_has_hopped=None, true=None, false=None,
+                 file_not_found=None):
+	# ... and so on ad infinitum
+ 	return file_not_found
+def version_graveyard():
+# ... or I can create a new function each time the signature
+# changes.
+	def make_api_call_v2(foo, bar, baz, qux):
+		return make_api_call(foo, bar, baz) - qux
+	def make_api_call_v3(foo, bar, baz, qux, foo_polarity):
+		if foo_polarity != 'reversed':
+			return make_api_call_v2(foo, bar, baz, qux)
+		return None
+	def make_api_call_v4(foo, bar, baz, qux, foo_polarity, baz_coefficient):
+		return make_api_call_v3(foo, bar, baz, qux, foo_polarity) * baz_coefficient
+	def make_api_call_v5(foo, bar, baz, qux, foo_polarity, baz_coefficient, quux_capacitor):
+		# I don't need 'foo', 'bar', or 'baz' anymore, but I have to
+		# keep supporting them...
+		return baz_coefficient * quux_capacitor
+```
+* **Write This:**
+```python
+def make_api_call(foo, bar, baz):
+	if baz in ('Unicorn', 'Oven', 'New York'):
+		return foo(bar)
+	else:
+		return bar(foo)
+# I need to add another parameter to `make_api_call`
+# without breaking everyone's existing code.
+# Easy...
+def new_hotness():
+	def make_api_call(foo, bar, baz, *args, **kwargs):
+		# Now I can accept any type and number of arguments
+		# without worrying about breaking existing code.
+		baz_coefficient = kwargs['the_baz']
+		# I can even forward my args to a different function without
+		# knowing their contents!
+		return baz_coefficient in new_function(args)
+```
+14. Use the `*` operator to represent the “rest, middle, head” of a list
+--------------------
+* **Don't Write This:**
+```python
+some_list = ['a', 'b', 'c', 'd', 'e']
+(first, second, rest) = some_list[0], some_list[1], some_list[2:]
+print(rest)
+(first, middle, last) = some_list[0], some_list[1:-1], some_list[-1]
+print(middle)
+(head, penultimate, last) = some_list[:-2], some_list[-2], some_list[-1]
+print(head)
+
+```
+* **Write This:**
+```python
+some_list = ['a', 'b', 'c', 'd', 'e']
+(first, second, *rest) = some_list
+print(rest)
+(first, *middle, last) = some_list
+print(middle)
+(*head, penultimate, last) = some_list
+print(head)
+```
+15. `dict.get` to provide default values
+--------------------
+* **Don't Write This:**
+```python
+log_severity = None
+if 'severity' in configuration:
+	log_severity = configuration['severity']
+else:
+	log_severity = 'Info'
+
+```
+* **Write This:**
+```python
+log_severity = configuration.get('severity', 'Info')
+```
+16. Use a `dict comprehension` to build a `dict` clearly and efficiently
+--------------------
+* **Don't Write This:**
+```python
+user_email = {}
+for user in users_list:
+	if user.email:
+		user_email[user.name] = user.email
+
+```
+* **Write This:**
+```python
+user_email = {user.name: user.email for user in users_list if user.email}	
+```
+17. Prefer the `format` function for formatting strings
+--------------------
+* **Don't Write This:**
+```python
+def get_formatted_user_info_worst(user):
+	# Tedious to type and prone to conversion errors
+	return 'Name: ' + user.name + ', Age: ' + str(user.age) + ', Sex: ' + user.sex
+def get_formatted_user_info_slightly_better(user):
+	# No visible connection between the format string placeholders
+	# and values to use. Also, why do I have to know the type?
+	# Don't these types all have __str__ functions?
+	return 'Name: %s, Age: %i, Sex: %c' % (user.name, user.age, user.sex)
+
+```
+* **Write This:**
+```python
+def get_formatted_user_info(user):
+# Clear and concise. At a glance I can tell exactly what
+# the output should be. Note: this string could be returned
+# directly, but the string itself is too long to fit on the
+# page.
+	output = 'Name: {user.name}, Age: {user.age}, Sex: {user.sex}'.format(user=user)
+	return output
+```
+18. Chain `string` functions to make a simple series of transformations more clear
+--------------------
+* **Don't Write This:**
+```python
+book_info = ' The Three Musketeers: Alexandre Dumas'
+formatted_book_info = book_info.strip()
+formatted_book_info = formatted_book_info.upper()
+formatted_book_info = formatted_book_info.replace(':', ' by')
+
+```
+* **Write This:**
+```python
+book_info = ' The Three Musketeers: Alexandre Dumas'
+formatted_book_info = book_info.strip().upper().replace(':', ' by')
+```
+19. Define `__str__` in a class to show a human-readable representation
+--------------------
+* **Don't Write This:**
+```python
+class Point():
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+p = Point(1, 2)
+print (p)
+# Prints '<__main__.Point object at 0x91ebd0>'
+```
+* **Write This:**
+```python
+class Point():
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+	def __str__(self):
+		return '{0}, {1}'.format(self.x, self.y)
+p = Point(1, 2)
+print (p)
+# Prints '1, 2'
+```
+
+
+
 12. 
 ------
 * **Write This:**
