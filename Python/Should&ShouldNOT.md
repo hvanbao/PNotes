@@ -1,6 +1,9 @@
-Source: http://safehammad.com/downloads/python-idioms-2014-01-16.pdf
-http://images.immobilien.de/expose/00/04/04/36/0004043615/etc248188603/writing_idiomatic_python_3.pdf
-
+Source: 
+* http://safehammad.com/downloads/python-idioms-2014-01-16.pdf
+* http://images.immobilien.de/expose/00/04/04/36/0004043615/etc248188603/writing_idiomatic_python_3.pdf
+* 
+* [Writing Idiomatic Python Video Two -Jeff Knupp](https://www.youtube.com/watch?v=wym71aDDMyo)
+* [Zero to Hero with Python](https://www.youtube.com/watch?v=9uq3w6JJS00)
 1. Enumerate
 ------
  
