@@ -4,6 +4,9 @@ Source:
 * 
 * [Writing Idiomatic Python Video Two -Jeff Knupp](https://www.youtube.com/watch?v=wym71aDDMyo)
 * [Zero to Hero with Python](https://www.youtube.com/watch?v=9uq3w6JJS00)
+* [Python performance](https://www.youtube.com/watch?v=7eeEf_rAJds) 
+
+
 1. Enumerate
 ------
  
