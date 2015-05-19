@@ -1,4 +1,6 @@
-# [Ky luat khong nuoc mat](https://www.youtube.com/watch?v=b2ySQrefZ2k)
+# [KỶ LUẬT KHÔNG NƯỚC MẮT - CON LUÔN LUÔN TỐT ](https://www.youtube.com/watch?v=b2ySQrefZ2k)
+# [KỶ LUẬT KHÔNG NƯỚC MẮT - Bi quyet nuoi day tre] (https://www.youtube.com/watch?v=pthchy9SQ4o)
+# [KỶ LUẬT KHÔNG NƯỚC MẮT - Cách khen con đúng cách] (https://www.youtube.com/watch?v=4G0WgDqyvXw)
 # Dinh doc lap - Buoi chieu
 # Thao cam vien
 # NHÀ SÁCH
