@@ -9,6 +9,7 @@
 * [Cha me am hieu](https://www.youtube.com/watch?v=uhOmaUpaEUU&list=PLgxMAv_nFTN_Ku7CaiJsRm8p23aO9EqG4)
 * [Cha me hon nhien 1] (https://www.youtube.com/watch?v=5sz4z6CXjmw&list=PLgxMAv_nFTN_c_66ucvMMzlUXS-lXdzPt)
 * [Cha me hon nhien 2] (https://www.youtube.com/watch?v=ltAyDl3E8-M)
+* [Chờ Đến Mẫu Giáo Thì Đã Muộn - 01] (https://www.youtube.com/watch?v=LeBpK9ppjY0)
 
 
 # Dinh doc lap - Buoi chieu
