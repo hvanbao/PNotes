@@ -60,6 +60,11 @@ Docker
     ```
     sudo docker run -i -t ubuntu /bin/bash
     root@af8bae53bdd3:/#
+    
+    $ sudo docker exec -i -t 665b4a1e17b6 bash #by ID
+    or
+    $ sudo docker exec -i -t loving_heisenberg bash #by Name
+    $ root@665b4a1e17b6:/#
     ```
     - An Interactive Container
     - 
